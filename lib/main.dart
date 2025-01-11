@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
-        home: HomeScreen(),
-        debugShowCheckedModeBanner: false);
+        home: const HomeScreen(),
+        debugShowCheckedModeBanner: false
+    );
   }
 }
