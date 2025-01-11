@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   "Find the best \nplace for you",
                   style: Theme.of(context).textTheme.displayLarge,
-                  textAlign: TextAlign.center, // Center the text
+                  textAlign: TextAlign.center, 
                 ),
                 const SizedBox(height: 60),
                 SizedBox(
@@ -93,12 +93,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 20),
                 SizedBox(
                   height: 48,
-                  width: double
-                      .infinity, // This ensures it takes up the full available width
+                  width: double.infinity,
                   child: AnimatedGradientButton(
                     buttonText: 'Create an account',
                     onPressed: () {
-                      // Navigator.pushNamed(context, routeName);
+                      Navigator.pushNamed(context, '/searchCatalog1');
                     },
                   ),
                 ),
