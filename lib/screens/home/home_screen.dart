@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,6 +10,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          centerTitle: false,
+          title: const Image(
+            image: AssetImage("lib/assets/images/homzes.png"),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: ClipOval(
+                child: Image.asset("lib/assets/icons/big_icon_button.png", 
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ]),
+    );
   }
 }
