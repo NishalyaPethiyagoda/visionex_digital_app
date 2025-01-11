@@ -4,6 +4,7 @@ class AnimatedGradientButton extends StatefulWidget {
   final String buttonText;
   final VoidCallback onPressed;
   final bool isButtonDisabled;
+
   const AnimatedGradientButton({super.key, required this.buttonText, required this.onPressed, this.isButtonDisabled = false});
 
   @override
@@ -24,11 +25,11 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton> with Si
       duration: const Duration(seconds: 1, milliseconds: 350),
     )..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          _controller.repeat(); // Restart the animation to create a continuous flow
+          _controller.repeat(); 
         }
       });
 
-    _controller.forward(); // Start the animation
+    _controller.forward(); 
   }
 
   @override
@@ -48,8 +49,8 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton> with Si
               ? LinearGradient(colors: [Colors.grey.shade500, Colors.grey.shade500])
               : LinearGradient(
                   colors: const [
-                    Color(0xFFFFA726),
-                    Color(0xFFFFD466), 
+                    Color(0xFF37AD5F),
+                    Color.fromARGB(255, 24, 136, 61),
                   ],
               stops: [
                 _controller.value,                      
