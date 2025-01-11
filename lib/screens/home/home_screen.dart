@@ -97,7 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       .infinity, // This ensures it takes up the full available width
                   child: AnimatedGradientButton(
                     buttonText: 'Create an account',
-                    onPressed: () {},
+                    onPressed: () {
+                      // Navigator.pushNamed(context, routeName);
+                    },
                   ),
                 ),
               ],
