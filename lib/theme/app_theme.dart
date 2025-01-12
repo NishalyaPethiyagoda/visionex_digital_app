@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
-    fontFamily: 'Roboto ',
+    fontFamily: 'Roboto Flex',
     textTheme: const TextTheme(
       displayLarge: TextStyle(
         color: Colors.white,
@@ -11,20 +11,41 @@ class AppTheme {
         letterSpacing: -0.72,
         height: 1.0,
       ),
+      displayMedium: TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.72,
+        height: 1.0,
+      ),
+      displaySmall: TextStyle(
+        color: Colors.black,
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -0.72,
+        height: 1.0,
+      ),
       bodyLarge: TextStyle(
+        color: Colors.black,
         fontSize: 16,
+        letterSpacing: -0.72,
+        fontWeight: FontWeight.w700,
+        height: 1.0,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 14,
         fontWeight: FontWeight.normal,
-        letterSpacing: 0.0,
+        letterSpacing: -0.72,
         height: 1.5,
         color: Colors.black,
       ),
-      bodyMedium: TextStyle(
-          fontSize: 20,
-          letterSpacing: -0.72,
-          fontWeight: FontWeight.w700,
+      bodySmall: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.normal,
+        letterSpacing: -0.72,
         height: 1.5,
-          ),
-          
+        color: Colors.black,
+      ),  
     ),
     scaffoldBackgroundColor: Colors.white,
   );

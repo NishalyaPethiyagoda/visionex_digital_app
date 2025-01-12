@@ -71,6 +71,7 @@ flutter:
     - lib/assets/images/house_image_1.png
     - lib/assets/icons/buy_icon.png
     - lib/assets/icons/rent_icon.png
+    - lib/assets/icons/menu_icon.png 
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

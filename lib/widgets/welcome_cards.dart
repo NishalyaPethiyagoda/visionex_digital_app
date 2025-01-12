@@ -14,7 +14,7 @@ class WelcomeCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(4),
+      margin: const EdgeInsets.all(4),
       width: 150,
       height: 172,
       decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class WelcomeCards extends StatelessWidget {
             ),
             Text(
               cardName,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.displayMedium,
               // style: const TextStyle(
               //   fontSize: 20,
               //   letterSpacing: -0.72,
