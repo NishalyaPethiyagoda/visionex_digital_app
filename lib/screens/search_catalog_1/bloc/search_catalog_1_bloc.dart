@@ -22,6 +22,7 @@ class SearchCatalog1Bloc
         if(snapshot.isNotEmpty){
           properties = snapshot.map((map) => PropertyModel.fromMap(map)).toList();
         }
+        print(properties);
         
         emit(SearchCatalogLoadedState(properties) );
         
