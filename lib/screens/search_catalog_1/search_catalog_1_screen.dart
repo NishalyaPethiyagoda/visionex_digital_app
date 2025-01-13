@@ -61,8 +61,8 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: headerCardHeight,
-                          ), // avoid header card space
+                            height: headerCardHeight,  // avoid header card space
+                          ), 
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 20, vertical: 10),
@@ -76,7 +76,7 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                       "Featured",
                                       style: Theme.of(context)
                                           .textTheme
-                                          .displaySmall,
+                                           .displaySmall,
                                     ),
                                     TextButton(
                                         onPressed: () {
@@ -170,100 +170,101 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                 },
               ),
               Positioned(
-                  left: 0,
-                  right: 0,
-                  top: 0,
-                  child: Container(
-                    height: headerCardHeight,
-                    decoration: const BoxDecoration(
-                        color: Color(0xFFF0F298),
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 70,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              GestureDetector(
-                                onTap: () {},
-                                child: SizedBox(
-                                  width: 24,
+                left: 0,
+                right: 0,
+                top: 0,
+                child: Container(
+                  height: headerCardHeight,
+                  decoration: const BoxDecoration(
+                      color: Color(0xFFF0F298),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 70,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: () {},
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Image.asset(
                                   height: 24,
-                                  child: Image.asset(
-                                    height: 24,
-                                    width: 24,
-                                    'lib/assets/icons/menu_icon.png',
-                                  ),
+                                  width: 24,
+                                  'lib/assets/icons/menu_icon.png',
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Hi, Stanislav",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyLarge!
-                                        .copyWith(letterSpacing: -0.36),
-                                  ),
-                                  const SizedBox(
-                                    width: 8,
-                                  ),
-                                  const Stack(
-                                    children: [
-                                      CircleAvatar(
-                                        child: Text('S'),
-                                        radius: 20,
-                                        backgroundColor: Color(0xFFA9A9A9),
-                                      ),
-                                      Positioned(
-                                        right: 0,
-                                        top: 0,
-                                        child: CircleAvatar(
-                                          radius: 5,
-                                          backgroundColor: Color(0xFFDE5D83),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 50,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25),
-                              color: Colors.white,
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 2.0, horizontal: 20.0),
-                              child: TextField(
-                                  controller: searchController,
-                                  // onChanged: ,
-                                  decoration: const InputDecoration(
-                                      hintText: 'Search',
-                                      border: InputBorder.none,
-                                      prefixIcon: Icon(
-                                        Icons.search,
-                                        size: 24,
-                                      ))),
+                            Row(
+                              children: [
+                                Text(
+                                  "Hi, Stanislav",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(letterSpacing: -0.36),
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                const Stack(
+                                  children: [
+                                    CircleAvatar(
+                                      child: Text('S'),
+                                      radius: 20,
+                                      backgroundColor: Color(0xFFA9A9A9),
+                                    ),
+                                    Positioned(
+                                      right: 0,
+                                      top: 0,
+                                      child: CircleAvatar(
+                                        radius: 5,
+                                        backgroundColor: Color(0xFFDE5D83),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                          )
-                        ],
-                      ),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 2.0, horizontal: 20.0),
+                            child: TextField(
+                                controller: searchController,
+                                // onChanged: ,
+                                decoration: const InputDecoration(
+                                    hintText: 'Search',
+                                    border: InputBorder.none,
+                                    prefixIcon: Icon(
+                                      Icons.search,
+                                      size: 24,
+                                    ))),
+                          ),
+                        )
+                      ],
                     ),
-                  )),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
