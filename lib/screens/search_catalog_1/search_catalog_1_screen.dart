@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:visionex_digital_app/models/property_model.dart';
 import 'package:visionex_digital_app/screens/search_catalog_1/bloc/search_catalog_1_bloc.dart';
 import 'package:visionex_digital_app/screens/search_catalog_1/repository/search_catalog_1_repo.dart';
-import 'package:visionex_digital_app/util/global_constants.dart';
 
 import '../../widgets/custom_popup.dart';
 import '../../widgets/featured_cards.dart';
@@ -33,7 +32,6 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
     final double screenHeight = MediaQuery.of(context).size.height;
     final double headerCardHeight = screenHeight * 0.23; // 196 px
     final double spacingHeight1 = screenHeight * 0.0235; // 20px
-    final double spacingHeight2 = screenHeight * 0.014; // 12px
 
     return BlocProvider(
       create: (context) => SearchCatalog1Bloc(SearchCatalog1Repo())
@@ -294,63 +292,3 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
     );
   }
 }
-
-// class ProductListScreen extends StatelessWidget {
-//   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-//    ProductListScreen({super.key});
-
-//   Future<List<Map<String, dynamic>>> getProducts() async {
-//     try {
-//       // Fetching data from Firestore
-//       QuerySnapshot querySnapshot = await _firestore.collection('propertise').get();
-//       List<Map<String, dynamic>> products = [];
-
-//       for (var doc in querySnapshot.docs) {
-//         products.add(doc.data() as Map<String, dynamic>);
-//       }
-
-//       return products;
-//     } catch (e) {
-//       print("Firestore exception: $e");
-//       throw e;
-//     }
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Product List')),
-//       body: FutureBuilder<List<Map<String, dynamic>>>(
-//         future: getProducts(),
-//         builder: (context, snapshot) {
-//           if (snapshot.connectionState == ConnectionState.waiting) {
-//             return Center(child: CircularProgressIndicator());
-//           }
-
-//           if (snapshot.hasError) {
-//             return Center(child: Text('Error: ${snapshot.error}'));
-//           }
-
-//           if (!snapshot.hasData || snapshot.data!.isEmpty) {
-//             return Center(child: Text('No products found.'));
-//           }
-
-//           List<Map<String, dynamic>> products = snapshot.data!;
-
-//           return ListView.builder(
-//             itemCount: products.length,
-//             itemBuilder: (context, index) {
-//               Map<String, dynamic> product = products[index];
-//               return ListTile(
-//                 leading: Image.network(product['Image']),  // Display image using the URL
-//                 title: Text(product['Title']),
-//                 subtitle: Text('Price: ${product['Price']}'),
-//               );
-//             },
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
