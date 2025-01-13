@@ -22,13 +22,22 @@ class PropertyModel {
       imageUrl: map['Image'] ?? '',
       location: map['Location'] ?? '',
       price: map['Price'] != null
-          ? (map['Price'] is int
-              ? (map['Price'] as int).toDouble()
-              : map['Price'] as double)
+          ? ((map['Price'] is int
+                          ? (map['Price'] as int).toDouble()
+                          : map['Price'] as double) *
+                      100)
+                  .roundToDouble() /
+              100
           : 0.0,
-      numberOfBeds:
-          map['Number_of_beds'] != null ? (map['Number_of_beds'] is double ? (map['Number of beds'] as double).toInt() : map['Number_of_beds'] as int) : 0,
-      numberOfBathrooms: map['Number_of_bathrooms'] != null ? (map['Number_of_bathrooms'] is double ? (map['Number_of_bathrooms'] as double).toInt() : map['Number_of_bathrooms'] as int)
+      numberOfBeds: map['Number_of_beds'] != null
+          ? (map['Number_of_beds'] is double
+              ? (map['Number of beds'] as double).toInt()
+              : map['Number_of_beds'] as int)
+          : 0,
+      numberOfBathrooms: map['Number_of_bathrooms'] != null
+          ? (map['Number_of_bathrooms'] is double
+              ? (map['Number_of_bathrooms'] as double).toInt()
+              : map['Number_of_bathrooms'] as int)
           : 0,
     );
   }
