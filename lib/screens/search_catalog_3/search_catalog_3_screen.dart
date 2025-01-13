@@ -96,6 +96,7 @@ class _SearchCatalog3ScreenState extends State<SearchCatalog3Screen> {
                         backgroundColor: const Color(0xFF282828),
                         child: Image.asset(
                           'lib/assets/icons/menu_icon.png',
+                          color: Colors.white,
                           width: 24, 
                           height: 24, 
                           fit: BoxFit

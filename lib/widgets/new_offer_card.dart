@@ -44,49 +44,80 @@ class _NewOfferCardState extends State<NewOfferCard> {
                       child: Image(
                           image:
                               AssetImage('lib/assets/icons/heart_icon.png'))),
-                ))
+                )),
+                Positioned(
+                right: 10,
+                bottom: 10,
+                child: Container(
+                  height: 24,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24),
+                    color: Colors.white
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 4, 10, 3),
+                    child: Text('\$ ${widget.price}', style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(
+                                  letterSpacing: -0.36,
+                                  fontWeight: FontWeight.w600),),
+                  ))
+              )
           ],
         ),
         SizedBox(
-          height: 16,
+          height: 26,
           child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    widget.title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        letterSpacing: -0.36, fontWeight: FontWeight.w600),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0,10,0,0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      widget.title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          letterSpacing: -0.36, fontWeight: FontWeight.w600),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 30,
-                ),
-                const Row(
-                  children: [
-                    SizedBox(
-                      width: 15.00,
-                      height: 15.00,
-                      child: Center(
-                        // Center the image vertically
-                        child: Image(
-                          image: AssetImage(
-                              'lib/assets/icons/review_symbol_star_icon.png'),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 15.00,
+                        height: 15.00,
+                        child: Center(
+                          // Center the image vertically
+                          child: Image(
+                            image: AssetImage(
+                                'lib/assets/icons/review_symbol_star_icon.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 4.0),
-                    Center(child: Text('4.9')), // Center the text vertically
-                    SizedBox(width: 4.0),
-                    Center(
-                        child:
-                            Text('(29 Reviews)')), // Center the text vertically
-                  ],
-                ),
-              ],
+                      SizedBox(width: 4.0),
+                      Center(
+                        child: Text(
+                          '4.9',
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          letterSpacing: -0.36, fontWeight: FontWeight.w600),
+                          )), // Center the text vertically
+                      SizedBox(width: 4.0),
+                      Center(
+                          child:
+                              Text(
+                                '(29 Reviews)',
+                                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          letterSpacing: -0.36, fontWeight: FontWeight.w400, color: Color(0xFF7E7E7E)),
+                                )), // Center the text vertically
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

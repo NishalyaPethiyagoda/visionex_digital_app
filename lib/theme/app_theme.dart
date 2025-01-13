@@ -34,7 +34,7 @@ class AppTheme {
       ),
       bodyMedium: TextStyle(
         fontSize: 14,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         letterSpacing: -0.72,
         height: 1.5,
         color: Colors.black,

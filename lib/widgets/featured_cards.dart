@@ -31,8 +31,8 @@ class FeaturedCard extends StatelessWidget {
                         fit: BoxFit.cover)),
               ),
               Positioned(
-                right: 20,
-                bottom: 20,
+                right: 15,
+                bottom: 15,
                 child: Container(
                   height: 24,
                   decoration: BoxDecoration(
@@ -41,7 +41,12 @@ class FeaturedCard extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 4, 10, 3),
-                    child: Text('\$ $price'),
+                    child: Text('\$ $price', style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(
+                                  letterSpacing: -0.36,
+                                  fontWeight: FontWeight.w600),),
                   ))
               )
             ],

@@ -49,34 +49,38 @@ class _PopluarRentOfferCardState extends State<PopluarRentOfferCard> {
                 left: 10,
                 child: Row(children: [
                   Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.white),
-                      height: 24,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB( 10.0, 4, 10.0, 3.0),
-                        child: Text(
-                          '${widget.property.numberOfBeds} Beds',
-                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            letterSpacing: -0.36,
-                            fontWeight: FontWeight.w600
-                          ),
-                          ),
-                      ),),
-                  const SizedBox(width: 4,),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.white),
+                    height: 24,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10.0, 4, 10.0, 3.0),
+                      child: Text(
+                        '${widget.property.numberOfBeds} Beds',
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            letterSpacing: -0.36, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 4,
+                  ),
                   Container(
                       height: 24,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB( 10.0, 4, 10.0, 3.0),
+                        padding: const EdgeInsets.fromLTRB(10.0, 4, 10.0, 3.0),
                         child: Text(
-                            '${widget.property.numberOfBathrooms} Bathroom',
-                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            letterSpacing: -0.36,
-                            fontWeight: FontWeight.w600
-                        ),),
+                          '${widget.property.numberOfBathrooms} Bathroom',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall!
+                              .copyWith(
+                                  letterSpacing: -0.36,
+                                  fontWeight: FontWeight.w600),
+                        ),
                       )),
                 ]),
               ),
@@ -86,6 +90,7 @@ class _PopluarRentOfferCardState extends State<PopluarRentOfferCard> {
             padding: const EdgeInsets.fromLTRB(0, 10.0, 0, 20.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   child: Column(
@@ -99,7 +104,7 @@ class _PopluarRentOfferCardState extends State<PopluarRentOfferCard> {
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyMedium!
+                              .bodyLarge!
                               .copyWith(
                                   letterSpacing: -0.36,
                                   fontWeight: FontWeight.w600),
@@ -109,26 +114,37 @@ class _PopluarRentOfferCardState extends State<PopluarRentOfferCard> {
                         widget.property.location,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            letterSpacing: -0.36, fontWeight: FontWeight.w600),
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            letterSpacing: -0.36,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF7E7E7E)),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(width: 80,),
+                const SizedBox(
+                  width: 40,
+                ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      '\$ ${widget.property.price}',
-                      style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                            fontSize: 22, fontWeight: FontWeight.w700),
+                    Baseline(
+                      baseline: 0,
+                      baselineType: TextBaseline.alphabetic,
+                      child: Text(
+                        '\$ ${widget.property.price}',
+                        style: Theme.of(context)
+                            .textTheme
+                            .displayMedium!
+                            .copyWith(
+                                fontSize: 22, fontWeight: FontWeight.w700),
                       ),
+                    ),
                     Text(
                       ' /mo',
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            letterSpacing: -0.36, fontWeight: FontWeight.w600),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          letterSpacing: -0.36, fontWeight: FontWeight.w600),
+                    ),
                   ],
                 )
               ],
