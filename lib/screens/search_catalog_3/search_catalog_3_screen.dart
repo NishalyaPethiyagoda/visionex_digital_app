@@ -34,84 +34,86 @@ class _SearchCatalog3ScreenState extends State<SearchCatalog3Screen> {
                 SizedBox(
                   height: headerCardHeight,
                 ), // avoid header card space
-                Padding(
-                  padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Featured",
-                            style: Theme.of(context).textTheme.displaySmall,
-                          ),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "View all",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 12,
-                                        letterSpacing: -0.36,
-                                        color: Color(0xFF7E7E7E)),
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        height: spacingHeight2,
-                      ),
-                      SizedBox(
-                        height: screenHeight * 0.202,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return cards[index];
-                          },
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Featured",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "View all",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          letterSpacing: -0.36,
+                                          color: Color(0xFF7E7E7E)),
+                                ))
+                          ],
                         ),
-                      ),
-                      SizedBox(
-                        height: spacingHeight1,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "New Offers",
-                            style: Theme.of(context).textTheme.displaySmall,
-                          ),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "View all",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 12,
-                                        letterSpacing: -0.36,
-                                        color: Color(0xFF7E7E7E)),
-                              ))
-                        ],
-                      ),
-                      // SizedBox(
-                      //   height: spacingHeight2,
-                      // ),
-                      SizedBox(
-                        height: screenHeight * 0.295,
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return cards[index];
-                          },
+                        SizedBox(
+                          height: spacingHeight2,
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: screenHeight * 0.202,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 3,
+                            itemBuilder: (context, index) {
+                              return cards[index];
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: spacingHeight1,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "New Offers",
+                              style: Theme.of(context).textTheme.displaySmall,
+                            ),
+                            TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "View all",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12,
+                                          letterSpacing: -0.36,
+                                          color: Color(0xFF7E7E7E)),
+                                ))
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0,0,0,10.0),
+                          child: Expanded(
+                            child: ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              itemCount: 3,
+                              itemBuilder: (context, index) {
+                                return cards[index];
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -139,7 +141,7 @@ class _SearchCatalog3ScreenState extends State<SearchCatalog3Screen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap: (){},
+                            onTap: () {},
                             child: SizedBox(
                               width: 24,
                               height: 24,
@@ -154,8 +156,11 @@ class _SearchCatalog3ScreenState extends State<SearchCatalog3Screen> {
                             children: [
                               Text(
                                 "Hi, Stanislav",
-                                style: Theme.of(context).textTheme.bodyLarge!.copyWith(letterSpacing: -0.36),
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(letterSpacing: -0.36),
+                              ),
                               const SizedBox(
                                 width: 8,
                               ),

@@ -73,6 +73,7 @@ flutter:
     - lib/assets/icons/rent_icon.png
     - lib/assets/icons/menu_icon.png
     - lib/assets/icons/heart_icon.png
+    - lib/assets/icons/review_symbol_star_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

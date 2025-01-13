@@ -31,7 +31,7 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double headerCardHeight = screenHeight * 0.28; // 196 px
+    final double headerCardHeight = screenHeight * 0.23; // 196 px
     final double spacingHeight1 = screenHeight * 0.0235; // 20px
     final double spacingHeight2 = screenHeight * 0.014; // 12px
 
@@ -63,28 +63,29 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: headerCardHeight,  // avoid header card space
-                          ), 
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Featured",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                           .displaySmall,
-                                    ),
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, '/searchCatalog3');
-                                        },
+                            height: headerCardHeight + spacingHeight1, // avoid header card space
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Featured",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displaySmall,
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/searchCatalog3');
+                                          },
                                         child: Text(
                                           "View all",
                                           style: Theme.of(context)
@@ -95,44 +96,48 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                                   fontSize: 12,
                                                   letterSpacing: -0.36,
                                                   color: Color(0xFF7E7E7E)),
-                                        ))
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: spacingHeight2,
-                                ),
-                                SizedBox(
-                                  height: screenHeight * 0.256,
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: properties.length,
-                                    itemBuilder: (context, index) {
-                                      return FeaturedCard(
-                                        backgroundImage: properties[index].imageUrl, 
-                                        title: properties[index].title, 
-                                        price: properties[index].price.toString(),
-                                      );
-                                    },
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                ),
-                                SizedBox(
-                                  height: spacingHeight1,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "New Offers",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall,
+                                  SizedBox(
+                                    height: spacingHeight1,
+                                  ),
+                                  SizedBox(
+                                    height: 200,
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: properties.length,
+                                      itemBuilder: (context, index) {
+                                        return FeaturedCard(
+                                          backgroundImage:
+                                              properties[index].imageUrl,
+                                          title: properties[index].title,
+                                          price: properties[index]
+                                              .price
+                                              .toString(),
+                                        );
+                                      },
                                     ),
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, '/searchCatalog3');
-                                        },
+                                  ),
+                                  SizedBox(
+                                    height: spacingHeight1* 2,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "New Offers",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displaySmall,
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/searchCatalog3');
+                                          },
                                         child: Text(
                                           "View all",
                                           style: Theme.of(context)
@@ -143,27 +148,34 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                                   fontSize: 12,
                                                   letterSpacing: -0.36,
                                                   color: Color(0xFF7E7E7E)),
-                                        ))
-                                  ],
-                                ),
-                                // SizedBox(
-                                //   height: spacingHeight2,
-                                // ),
-                                SizedBox(
-                                  height: screenHeight * 0.295,
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.vertical,
-                                    itemCount: properties.length,
-                                    itemBuilder: (context, index) {
-                                      return NewOfferCard(
-                                        backgroundImage: properties[index].imageUrl, 
-                                        title: properties[index].title, 
-                                        price: properties[index].price.toString(),
-                                      );
-                                    },
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: spacingHeight1,
+                                  ),
+                                  Expanded(
+                                    
+                                    child: ListView.builder(
+                                      padding: const EdgeInsets.fromLTRB(0, 5, 0, 20), 
+                                      scrollDirection: Axis.vertical,
+                                      
+                                      itemCount: properties.length,
+                                      itemBuilder: (context, index) {
+                                        return NewOfferCard(
+                                          backgroundImage:
+                                              properties[index].imageUrl,
+                                          title: properties[index].title,
+                                          price: properties[index]
+                                              .price
+                                              .toString(),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           )
                         ],
@@ -194,8 +206,8 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
-                        const SizedBox(
-                          height: 70,
+                        SizedBox(
+                          height: headerCardHeight * 0.19,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
