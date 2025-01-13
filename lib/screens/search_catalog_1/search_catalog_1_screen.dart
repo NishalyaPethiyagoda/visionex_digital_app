@@ -6,6 +6,8 @@ import 'package:visionex_digital_app/screens/search_catalog_1/repository/search_
 import 'package:visionex_digital_app/util/global_constants.dart';
 
 import '../../widgets/custom_popup.dart';
+import '../../widgets/featured_cards.dart';
+import '../../widgets/new_offer_card.dart';
 import 'bloc/search_catalog_1_event.dart';
 import 'bloc/search_catalog_1_state.dart';
 
@@ -100,12 +102,16 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                   height: spacingHeight2,
                                 ),
                                 SizedBox(
-                                  height: screenHeight * 0.202,
+                                  height: screenHeight * 0.256,
                                   child: ListView.builder(
                                     scrollDirection: Axis.horizontal,
-                                    itemCount: 3,
+                                    itemCount: properties.length,
                                     itemBuilder: (context, index) {
-                                      return cards[index];
+                                      return FeaturedCard(
+                                        backgroundImage: properties[index].imageUrl, 
+                                        title: properties[index].title, 
+                                        price: properties[index].price.toString(),
+                                      );
                                     },
                                   ),
                                 ),
@@ -147,9 +153,13 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                   height: screenHeight * 0.295,
                                   child: ListView.builder(
                                     scrollDirection: Axis.vertical,
-                                    itemCount: 3,
+                                    itemCount: properties.length,
                                     itemBuilder: (context, index) {
-                                      return cards[index];
+                                      return NewOfferCard(
+                                        backgroundImage: properties[index].imageUrl, 
+                                        title: properties[index].title, 
+                                        price: properties[index].price.toString(),
+                                      );
                                     },
                                   ),
                                 ),
