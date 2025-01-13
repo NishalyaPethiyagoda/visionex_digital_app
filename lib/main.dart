@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/' : (context) => const HomeScreen(),
           '/searchCatalog1': (context) => const SearchCatalog1Screen(),
-          '/searchCatalog3': (context) => const SearchCatalog3Screen(),
+          '/searchCatalog3': (context) => const SearchCatalog3Screen(initial_property_list: [],),
         },
         debugShowCheckedModeBanner: false
     );

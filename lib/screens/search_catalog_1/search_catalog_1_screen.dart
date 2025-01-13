@@ -7,6 +7,7 @@ import 'package:visionex_digital_app/screens/search_catalog_1/repository/search_
 import '../../widgets/custom_popup.dart';
 import '../../widgets/featured_cards.dart';
 import '../../widgets/new_offer_card.dart';
+import '../search_catalog_3/search_catalog_3_screen.dart';
 import 'bloc/search_catalog_1_event.dart';
 import 'bloc/search_catalog_1_state.dart';
 
@@ -81,8 +82,12 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                            Navigator.pushNamed(
-                                                context, '/searchCatalog3');
+                                            Navigator.push(
+                                                context, 
+                                                MaterialPageRoute(
+                                                  builder: (context) => SearchCatalog3Screen(initial_property_list: properties),
+                                                  )
+                                                );
                                           },
                                         child: Text(
                                           "View all",
@@ -133,8 +138,12 @@ class _SearchCatalog1ScreenState extends State<SearchCatalog1Screen> {
                                       ),
                                       GestureDetector(
                                         onTap: () {
-                                            Navigator.pushNamed(
-                                                context, '/searchCatalog3');
+                                            Navigator.push(
+                                                context, 
+                                                MaterialPageRoute(
+                                                  builder: (context) => SearchCatalog3Screen(initial_property_list: properties),
+                                                  )
+                                                );
                                           },
                                         child: Text(
                                           "View all",
