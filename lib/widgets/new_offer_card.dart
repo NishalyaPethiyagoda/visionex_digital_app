@@ -25,7 +25,6 @@ class _NewOfferCardState extends State<NewOfferCard> {
         Stack(
           children: [
             Container(
-              margin: const EdgeInsets.all(4),
               width: screenWidth - 20 * 2,
               height: screenHeight * 0.3,
               decoration: BoxDecoration(
@@ -42,12 +41,9 @@ class _NewOfferCardState extends State<NewOfferCard> {
                   child: const SizedBox(
                       height: 24,
                       width: 24,
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(10, 4, 10, 3),
-                        child: Image(
-                            image:
-                                AssetImage('lib/assets/icons/heart_icon.png')),
-                      )),
+                      child: Image(
+                          image:
+                              AssetImage('lib/assets/icons/heart_icon.png'))),
                 ))
           ],
         ),
@@ -66,7 +62,9 @@ class _NewOfferCardState extends State<NewOfferCard> {
                         letterSpacing: -0.36, fontWeight: FontWeight.w600),
                   ),
                 ),
-                const SizedBox(width: 30,),
+                const SizedBox(
+                  width: 30,
+                ),
                 const Row(
                   children: [
                     SizedBox(
@@ -92,7 +90,9 @@ class _NewOfferCardState extends State<NewOfferCard> {
             ),
           ),
         ),
-        const SizedBox(height: 20,)
+        const SizedBox(
+          height: 20,
+        )
       ],
     );
   }
